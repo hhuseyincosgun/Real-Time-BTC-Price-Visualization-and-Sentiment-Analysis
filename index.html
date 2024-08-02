@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC/USDT Candlestick Chart</title>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        #container {
+            height: 800px;
+            width: 1500px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        var chart;
+
+        function fetchData() {
+            $.getJSON('/data', function(data) {
+                if (chart) {
+                    chart.series[0].setData(data, true, true, false);
+                } else {
+                    chart = Highcharts.stockChart('container', {
+                        rangeSelector: {
+                            selected: 1
+                        },
+                        title: {
+                            text: 'BTC/USDT 1 Hour Candlestick Chart'
+                        },
+                        yAxis: {
+                            labels: {
+                                align: 'right',
+                                x: -20,
+                                y: 5
+                            },
+                            title: {
+                                text: 'Price'
+                            },
+                            tickPositioner: function () {
+                                var positions = [],
+                                    tick = Math.floor(this.dataMin),
+                                    increment = Math.ceil((this.dataMax - this.dataMin) / 6);
+
+                                for (; tick - increment <= this.dataMax; tick += increment) {
+                                    positions.push(tick);
+                                }
+                                return positions;
+                            }
+                        },
+                        plotOptions: {
+                            candlestick: {
+                                pointPadding: 0.1,
+                                groupPadding: 0.2
+                            }
+                        },
+                        series: [{
+                            type: 'candlestick',
+                            name: 'BTC/USDT',
+                            data: data,
+                            tooltip: {
+                                valueDecimals: 2
+                            }
+                        }]
+                    });
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            fetchData();
+            setInterval(fetchData, 5000); // Fetch data every 5 seconds
+        });
+    </script>
+</body>
+</html>
