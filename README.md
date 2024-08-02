@@ -18,10 +18,15 @@ The architecture consists of the following components:
 - **Amazon S3**: Storage for historical data and processed results.
 - **Amazon RDS**: Database for storing structured data.
 - **Docker Containers**: Running sentiment analysis with spaCy and other dependencies.
+- **AWS EventBridge**: To manage and route events between different AWS services.
+- **Amazon EC2**: For hosting applications and running compute workloads.
+- **Amazon ECS**: For container orchestration and managing Docker containers.
+- **AWS API Gateway**: For creating, deploying, and managing secure APIs.
+
 - **Highcharts**: Frontend library for rendering the candlestick and volume charts.
 - **APIs**:
   - **Binance API**: For fetching real-time BTC price data.
-  - **Reddit API**: For extracting posts and comments related to BTC.
+  - **Reddit API**: For extracting posts and comments related to BTC
 
 ## Features
 
@@ -52,6 +57,10 @@ The architecture consists of the following components:
   - **AWS Lambda**: For serverless computing and data processing.
   - **Amazon S3**: For storing and retrieving data.
   - **Amazon SQS**: For managing message queues and ensuring data flows smoothly between different components.
+  - **AWS EventBridge**: To manage and route events between different AWS services.
+  - **Amazon EC2**: For hosting applications and running compute workloads.
+  - **Amazon ECS**: For container orchestration and managing Docker containers.
+  - **AWS API Gateway**: For creating, deploying, and managing secure APIs.
 
 - **Data Sources**:
   - **Binance API**: For fetching real-time BTC price data.
