@@ -9,7 +9,8 @@ This project, developed by our team, leverages AWS services to provide real-time
 
 ## Architecture
 
-![Architecture Diagram](path/to/architecture-diagram.png)
+![Diagram Picture](charts_and_diagram/diagram_picture.png)
+
 
 The architecture consists of the following components:
 
@@ -24,23 +25,26 @@ The architecture consists of the following components:
 
 ## Features
 
-1. **Candlestick Chart**:
+1. **Candlestick Chart and Sentiment Analysis**:
    - Visualizes real-time BTC prices using Highcharts.
    - Provides various time frame views (1m, 3m, 6m, YTD, 1y, All).
-
-2. **Sentiment Analysis**:
    - Analyzes Reddit posts mentioning BTC for sentiment (positive, negative, neutral).
    - Displays sentiment data below the candlestick chart.
 
-3. **Volume Chart**:
+![Bitcoin Prices and Moon Phases](charts_and_diagram/btc_price_sentiment.png)
+
+2. **Comparing Assets Charts**:
    - Displays the trading volume of BTC.
    - Provides insights into market activity.
 
-4. **Bitcoin Prices and Moon Phases**:
-   - Visualizes Bitcoin price trends in relation to moon phases.
-   - Allows for date range selection to update the chart dynamically.
+![Comparing Assets Charts](charts_and_diagram/compare_assets.png)
 
-![Bitcoin Prices and Moon Phases](path/to/bitcoin-moon-phases.png)
+
+3. **Bitcoin Prices and Moon Phases**:
+   - Visualizes Bitcoin price trends in relation to moon phases.
+   - Allows for date range selection to update the chart dynamically
+
+![Bitcoin Prices and Moon Phases](charts_and_diagram/moon_phases.png)
 
 ## Technology Stack
 
@@ -68,6 +72,8 @@ The architecture consists of the following components:
 ### Installation
 
 1. Clone the repository:
-   ```bash
+
+```bash
    git clone https://github.com/your-repo/btc-visualization-sentiment-analysis.git
    cd btc-visualization-sentiment-analysis
+```
