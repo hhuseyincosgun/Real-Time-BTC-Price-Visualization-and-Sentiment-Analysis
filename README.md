@@ -56,7 +56,6 @@ The architecture consists of the following components:
 - **AWS Services**:
   - **AWS Lambda**: For serverless computing and data processing.
   - **Amazon S3**: For storing and retrieving data.
-  - **Amazon SQS**: For managing message queues and ensuring data flows smoothly between different components.
   - **AWS EventBridge**: To manage and route events between different AWS services.
   - **Amazon EC2**: For hosting applications and running compute workloads.
   - **Amazon ECS**: For container orchestration and managing Docker containers.
